@@ -105,6 +105,7 @@ if(isset($_POST["authbtn"]))
  else
  {
  	?>
+ 	<h5>Encrytion key does not match</h5>
  	<button onclick="window.history.go(-1); return False;">GO BACK</button>
  	<?php
  	} 
