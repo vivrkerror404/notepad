@@ -89,7 +89,7 @@ body {
 		  <a href="#home" class="active">Home</a>
 		  <a href="#contact">Contact</a>
 		  <a href="#about">About</a>
-		  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+		  <a href="javascript:void(0);" class="icon" onclick="myFunction();">
 		    <i class="fa fa-bars"></i>
 		  </a>
 		</div>
@@ -106,7 +106,7 @@ function myFunction() {
 <!-- nav bar ends -->
 
 <!-- form -->
- <form class="form-group" method="POST" action="save.php">
+ <form class="form-group" method="POST" action="save.php" onsubmit="return formsubmit();">
  	<label>Heading</label></label><input class="form-control" type="text" name="headings" placeholder="some Heading....">
  	<div class="form-group">
     <label for="exampleFormControlTextarea1">Content</label>
@@ -126,6 +126,20 @@ function myFunction() {
      <label>Enter Secret Key to Encrypt:</label><input type="text" name="secretkey" class="form-control" placeholder="enter secret key" >
    </div>
   <label>Save as:</label><input type="text" name="saveas" class="form-control" placeholder="a name to save your note">
+  <p>Background color </p>
+<ul>
+<!-- <li><button style="background-color:red;padding:5px; border-radius:50px;border:none;"></button></li>
+<li><button style="background-color:blue;padding:5px; border-radius:50px;border:none;"></button></li>
+<li><button style="background-color:green;padding:5px; border-radius:50px;border:none;"></button></li> -->
+<input type="color" name="color" class="form-control" id="bgcol">
+</ul>
+<p>Font Color</p>
+<ul>
+<!-- <li><button style="background-color:red;padding:5px; border-radius:50px;border:none;"></button></li>
+<li><button style="background-color:blue;padding:5px; border-radius:50px;border:none;"></button></li>
+<li><button style="background-color:green;padding:5px; border-radius:50px;border:none;"></button></li> -->
+<input type="color" name="color" class="form-control" id="fontcol">
+</ul>
     <input type="submit" class="btn btn-success btn-lg btn-block" name="save" placeholder="save">
  </form>
    <!-- form ends -->
@@ -148,7 +162,17 @@ function myFunction() {
  }
     });
  
+function formsubmit(e)
+{
+var bgcolor=$('#bgcol').val();
+var fontcolor=$('#fontcol').val();
+console.log(bgcolor);
+console.log(fontcolor);
+document.cookie=`bgcol=${bgcolor}`;
+document.cookie=`fontcol=${fontcolor}`;
 
+return true;
+}
  </script>
  </body>
  </html>

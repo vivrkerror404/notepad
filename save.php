@@ -15,6 +15,8 @@ $_SESSION["enc_type"] = $encryption;
 $_SESSION["enc_key"] = $secretkey;
 
 $repp = str_replace(' ','_',$save_as);
+$bgcol=$_COOKIE['bgcol'];
+$fontcol=$_COOKIE['fontcol'];
 
 //saving the file
 $rando=rand(0,999999);
@@ -47,7 +49,7 @@ $result = $mysqli -> query($sql);
 $fp=fopen($c,'w');
 $lin = '<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">';
 $met = '<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">';
-$sty = '<style>p{word-wrap: break-word;}body{word-wrap: break-word;}</style>';
+$sty = '<style>p{word-wrap: break-word;}body{word-wrap: break-word;background-color:'.$bgcol.';color:'.$fontcol.'}</style>';
 $starting = "<HTML>\n<head>\n".$lin."\n".$met."\n".$sty."\n</head>\n<BODY>\n";
 $con = '<div class="container"><br>';
 $ending = "\n</div>\n</BODY></HTML>";
@@ -122,6 +124,7 @@ if(isset($_POST["authbtn"]))
  }
  ?>';
 
+
 //  $script='<script>
 
 // document.getElementById("backbtn").addEventListener("click",function(){
@@ -132,7 +135,7 @@ if(isset($_POST["authbtn"]))
 // 	</script>';
 $lin = '<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">';
 $met = '<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">';
-$sty = '<style>p{word-wrap: break-word;}body{word-wrap: break-word;}</style>';
+$sty = '<style>p{word-wrap: break-word;}body{word-wrap: break-word;background-color:'.$bgcol.';color:'.$fontcol.'}</style>';
 $starting = "<HTML>\n<head>\n".$lin."\n".$met."\n".$sty."\n</head>\n<BODY>\n";
 $con = '<div class="container"><br>';
 $ending = "\n</div>\n</BODY></HTML>";
